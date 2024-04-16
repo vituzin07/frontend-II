@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        #email{
+            background-color: antiquewhite;
+        }
+        #password{
+            background-color: antiquewhite;
+        }
+    </style>
+
+  <meta charset="UTF-8">
+  <title>Formulario Teste</title>
+</head>
+ 
+<body>
+  <form onmouseenter="usuarioEntrou()">
+    <input id="email" type="email" placeholder="Email" />
+    <input id="password" type="password" placeholder='digite sua senha' />
+    <input id="boasVindas" type="text" placeholder="" />
+  </form> 
+  <button onclick="fazerCadastro()"> Cadastre-se </button>
+  <button onclick="fazerLogin()"> Login </button>
+  <script>
+    var email = null
+    var senha = null
+
+    function fazerLogin() {
+        var emailInserido = document.getElementById('email').value;
+        var senhaInserida = document.getElementById('password').value;
+        
+        if (emailInserido == email && senhaInserida == senha){
+            alert("Seja bem vindo!")
+        }
+        else{
+            alert("Usuário não encontrado.")
+        }
+    }
+
+    function fazerCadastro(){
+      email = prompt("Insira seu Email:");
+      senha = prompt("Insira sua senha:");
+      console.log(email, senha)
+    }
+
+    function usuarioEntrou() {
+      document.getElementById('boasVindas').value = "Seja bem vindo";
+    }
+  </script>
+</body>
+</html>
